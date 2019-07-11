@@ -1,0 +1,62 @@
+if __name__ == "__main__" : 
+  
+    # Store the input in a str variable 
+    str  = input("enter a number")
+  
+    if isNumber(str) : 
+        print("Integer") 
+        if (int(str)%2==0)==True:
+            print("number is even")
+        else:
+            print("number is odd")
+  
+    else : 
+        print("float")
+  
+#string code
+alphabets = digits = special = 0
+count1=0
+count2=0
+string=input("enter string\n")
+if len(string)!=0:
+    if (string.isupper())==True:
+        print("string is upper") 
+        s=len(list(string))
+        print("uppercases found are:",s)
+    elif (string.islower())==True:
+        print("string is in lower case")
+        s1=len(list(string))
+        print("lowercases found are:",s1)
+    elif (string.istitle())==True:
+        print("it is capitalize")
+    elif (string.isalnum())==True:
+        print("string is alphanumeric")
+        s3=len(list(string))
+        for i in range(len(string)):
+            if(string[i].isalpha()):
+                alphabets = alphabets + 1
+            elif(string[i].isdigit()):
+                digits = digits + 1
+        print("\nTotal Number of Alphabets in this String :  ", alphabets)
+        print("Total Number of Digits in this String :  ", digits)
+        print("alphanumeric found are:",s3)
+        
+    else:
+        print("special character")
+        s2=len(list(string))
+        for i in range(len(string)):
+            if(string[i].isalpha()):
+                alphabets = alphabets + 1
+            elif(string[i].isdigit()):
+                digits = digits + 1
+            else:
+                special = special + 1
+        
+        print("\nTotal Number of Alphabets in this String :  ", alphabets)
+        print("Total Number of Digits in this String :  ", digits)
+        print("Total Number of Special Characters in this String :  ", special)
+        print("special char found are:",s2)
+        
+else:
+    print("no expression is entered")
+    print("length of string",len(string))
