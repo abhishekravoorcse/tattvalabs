@@ -1,0 +1,14 @@
+filename="words.txt"
+numlines=0
+numwords=0
+numchars=0
+with open(filename,'r')as file:
+    for line in file:
+        wordslist=line.split()
+        numlines +=1
+        numwords +=len(wordslist)
+        numchars +=len(line)
+print("length is:",numchars)
+print("lines is:",numlines)
+print("characters is:",numchars)
+print("number of words is:",numwords)
