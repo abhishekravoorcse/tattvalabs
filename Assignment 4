@@ -1,0 +1,18 @@
+import pandas as pd
+
+Data={
+    "name" : ["abhishek","ravi","sanju","suresh","ramesh","aryan","arya","arpit","kumar","ranbir"],
+    "usn" : ["2ke2","2ke3","2ke4","2ke5","2ke6","2ke7","2ke8","2ke9","2ke10","2ke11"],
+    "sem" : ["1","2","3","4","5","6","7","8","1","2"],
+    "branch" : ["cse","cse","ise","me","eee","ec","eee","cse","ise","bt"],
+    "cgpa" : ["7.5","8.5","6.5","7.2","7.8","7.69","8.9","8.8","8.7","8.6"],
+    "region" : ["mysore","banglore","belgavi","mysore","banglore","banglore","mysore","banglore","mysore","mysore"]
+}
+university1 = pd.DataFrame(Data)
+print(university1)
+print("describe the students\n",university1.describe)
+print("student who scored highest marks is",university1.max())
+print("particular region\n",university1.groupby(['region']).groups)
+print("semester of students\n",university1.groupby(['sem']).groups)
+print("captilize students\n",university1['name'].str.capitalize())
+print(university1.rename(index={0:'a',1:'b',2:'c',3:'d',4:'e',5:'f',6:'g',7:'h',8:'i',9:'j'}))
