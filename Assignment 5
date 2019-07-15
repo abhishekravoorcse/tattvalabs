@@ -1,0 +1,19 @@
+import pandas as pd
+
+University=pd.read_csv("university.csv")
+
+print(University)
+print("\n")
+print("Students maximum score\n",[University['Score'].max()])
+print("Students who scored more than 60 \n ",University[University['Score']>60])
+print("Mean of all scrores",University['Score'].mean())
+print("students studying in 3 sem are \n ",University[University['Sem']==3])
+
+
+print(University.describe())
+#print("Student name of maximum score\n",University[University[["Name","Score"]]==University['Score'].max()])
+print("Student name of maximum score\n",University[University["Score"]==University['Score'].max()])
+print("Student of region Belgaum\n",University[University["Region"]=="Belgaum"])
+print("students studying in 3 sem are \n ",University[University['Sem']==3])
+print("After capitalizing the names of students \n",University['Name'].str.capitalize())
+print(University.rename(index={0:'a',1:'b',2:'c',3:'d',4:'e',5:'f',6:'g',7:'h',8:'i',9:'j'}))
