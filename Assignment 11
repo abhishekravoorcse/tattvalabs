@@ -1,0 +1,15 @@
+#Searching of book authors by their start and end names.
+import pandas as pd
+import re
+bok=pd.DataFrame({
+    "book_name" : ["Introduction to Algorithms", "Cloud computing","Operation Research","IOT","Advanced Machine Learning","DNA Computing","Quantum Computation","Data Mining","Web Search","Cost Management","Big Data Analysis"],
+    "author" :["Thomas H C","Janakiram","Jain Brothers","Raj Kamal","Raj Chawala","Raj Gopal","Singh and Singh","Vipin Kumar","Avinash Kaushik","Ashish K","VK Jain"],
+})
+print("Book And Its Authors\n")
+print(bok)
+
+a=input("enter the end letters of authors to display book name:")
+print(bok[bok['author'].str.endswith(a)])
+
+b=input("enter the start letters of authors to display book name:")
+print(bok[bok['author'].str.startswith(b)])
