@@ -1,0 +1,38 @@
+#WINE DATA
+import numpy as np 
+#linear algebra
+import pandas as pd
+# a data processing and CSV I/O library
+wine = pd.read_csv('C:\\Users\\Abhishek\\tattvalabs\\wine.csv')
+print("The dataset is:")
+print(wine)
+print("the data set after removing the index values and column names are:")
+print (wine.to_string(index = False,header=False))
+print("the values are")
+print(wine.values)
+print("to print only 2 rows")
+print(wine.head(2))
+print("to print last 2 rows")
+print(wine.tail(2))
+#apply groupby on Malic acid to group data based on sepal_width
+print("After group by")
+gf=wine.groupby('Malic.acid')
+#print the entries in all groups formed
+print(gf.first())
+# find the values of size 3.4 in the group
+print("The values after grouping by size 3.4 is:")
+print(gf.get_group(1.73))
+#to know the type of data in the column
+print("Data type is:")
+print(wine.Alcohol.dtype)
+#to get the description
+print("description is:")
+print(wine.describe())
+#to print the axes
+print("Axes is")
+print(wine.axes)
+#to get the mean along rows and columns
+print("mean along rows")
+print(wine.mean(axis=0))
+print("mean along columns")
+print(wine.mean(axis=1))
