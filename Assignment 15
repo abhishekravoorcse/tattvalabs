@@ -1,0 +1,31 @@
+#BUTTON_PAGE_EVENT_USING_NO_SEPERATE_HTML_FILE
+from flask import Flask
+
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return """
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page1</title>
+</head>
+<body>
+<h3>hello world</h3>
+<form  method="get" action="/page2">
+    <button type="submit">page2</button>
+</form>
+</body>
+</html>
+"""
+
+
+@app.route('/page2')
+def index1():
+    return "python programming"
+
+
+if __name__ == "__main__":
+    app.run()
