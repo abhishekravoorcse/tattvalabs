@@ -1,0 +1,20 @@
+#SEARCHING_BOOK_AUTHORS_BY_AGE
+import pandas as pd
+book=pd.DataFrame({
+ "Name":['cloud computing','introduction to algorithms','operation research','iot','advanced machine learning','quantum computation','data mining','cost management','big data analysis','dna computing'],
+ "Authname":['thomas h.c','thomas h.c','Herbert','Robert','Raj kamal','v.k.jain','v.k.jain','v.k.jain','v.k.jain','ashish kaushik'],
+    "Age":[65,65,70,65,60,62,62,62,62,58]
+})
+print("BOOK AND ITS AUTHOR\n")
+print(book)
+a=input("enter the end letters of authors to display book name:")
+print(book[book['Authname'].str.endswith(a)])
+b=input("enter the start letters of authors to display book name:")
+print(book[book['Authname'].str.startswith(b)])
+c=int(input("enter the age:"))
+cnt=0
+a1=book.groupby("Age")
+print(a1.get_group(c))
+x=int(input("enter from index"))
+y=int(input("enter to index"))
+print(book[x:y])
