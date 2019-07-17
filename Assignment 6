@@ -1,0 +1,31 @@
+#IRIS DATA
+import pandas as pd
+import json
+
+df=pd.read_csv("iris.data")
+print(df)
+print("describe the iris data\n",df.describe)
+df.columns=['sepal_length','sepal_width','petal_length','petal_width','type']
+print(df)
+print("the data set after removing the index values and column names are:")
+print(df.to_string(index = False,header=False))
+print("values are")
+print(df.values)
+print("to print first two rows")
+print(df.head(2))
+print("to print last two rows")
+print(df.tail(2))
+print("after group by")
+e=df.groupby('sepal_length').size()
+print(e)
+print("axes in iris data")
+print(df.axes)
+
+#Coverting JSON file to CSV
+df = pd.read_json("dat.json")
+print("The json file content are:\n",df)
+df.to_csv('iris_csv.csv')
+d = pd.read_csv('iris_csv.csv')
+print("The csv file content are:\n",d)
+print(d.head())
+print(d.tail())
